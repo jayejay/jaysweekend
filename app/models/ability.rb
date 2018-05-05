@@ -35,7 +35,11 @@ class Ability
       can :manage, :all
     else
       can :manage, User, id: user.id
-      can :manage, [Article, Comment], user_id: user.id
+      can :manage, Article, user_id: user.id
+      can :create, Comment
+      can :destroy, Comment do |comment|
+        comment.users.include? user
+      end
       can :read, Article
     end
 

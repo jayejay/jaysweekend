@@ -1,0 +1,14 @@
+<div class="comments">
+  <% @article.comments.each do |comment| %>
+    <div class="title">
+      <h5><%= comment.title %></h5>
+    </div>
+    <div class="content">
+      <%= comment.content %>
+    </div>
+    <% if comment.users.include? current_user %>
+          <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %>
+    <% end %>
+    <hr>
+  <% end %>
+</div>
