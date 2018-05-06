@@ -5,7 +5,7 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Article</th>
+      <th></th>
     </tr>
   </thead>
 
@@ -13,11 +13,14 @@
     <% @articles.each do |article| %>
       <tr>
         <td>
-          <h3><%= article.title %></h3><br>
+          <a href="<%= article_path article.id %>" class="article-show">
+            <h3><%= article.title %></h3>
+          </a>
+          <br>
           <%= article.content %> <br><br>
           <small>by <%= article.user.name + ' ' + article.user.surname %></small>
           <br><br>
-          <%= link_to 'Show', article, class: "btn btn-sm btn-default"  %>
+
           <%= link_to 'Edit', edit_article_path(article), class: "btn btn-sm btn-info" %>
           <%= link_to 'Destroy', article, class: "btn btn-sm btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>

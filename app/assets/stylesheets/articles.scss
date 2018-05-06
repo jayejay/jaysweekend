@@ -1,3 +1,13 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.article-show:hover{
+  color:blue;
+  text-decoration: none;
+}
+
+.comments{
+  background-color: rgba(0,0,0,0.1);
+  padding: 1%;
+}
