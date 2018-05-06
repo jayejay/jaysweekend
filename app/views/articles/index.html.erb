@@ -14,8 +14,8 @@
       <tr>
         <td>
           <h3><%= article.title %></h3><br>
-          <%= article.content %> <br>
-          by <%= article.user.name + ' ' + article.user.surname %>
+          <%= article.content %> <br><br>
+          <small>by <%= article.user.name + ' ' + article.user.surname %></small>
           <br><br>
           <%= link_to 'Show', article, class: "btn btn-sm btn-default"  %>
           <%= link_to 'Edit', edit_article_path(article), class: "btn btn-sm btn-info" %>
