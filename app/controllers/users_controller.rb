@@ -81,10 +81,11 @@ class UsersController < ApplicationController
     end
 
     def get_bank
-      client = Savon.client(wsdl: 'http://www.thomas-bayer.com/axis2/services/BLZService?wsdl')
-      response = client.call(:get_bank, message: {blz: user_params[:bank_code]})
-      bank = response.body[:get_bank_response][:details][:bezeichnung]
-
+      unless user_params[:bank_code].blank?
+        client = Savon.client(wsdl: 'http://www.thomas-bayer.com/axis2/services/BLZService?wsdl')
+        response = client.call(:get_bank, message: {blz: user_params[:bank_code]})
+        bank = response.body[:get_bank_response][:details][:bezeichnung]
+      end
     end
 
 end
