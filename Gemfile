@@ -55,3 +55,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 gem 'cancancan', '~> 2.0'
+gem 'savon', '~> 2.12.0'
+gem 'redis-session-store'

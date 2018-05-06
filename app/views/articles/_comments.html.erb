@@ -1,13 +1,21 @@
 <div class="comments">
-  <% @article.comments.each do |comment| %>
+  <% @article.comments.order("created_at desc").each do |comment| %>
     <div class="title">
-      <h5><%= comment.title %></h5>
+      <h5><strong><%= comment.title %></strong></h5>
     </div>
+    <div id="user">
+
+    <% comment.users.each do |user| %>
+          <small><%= user.name + ' ' + user.surname %> says:</small>
+    <% end %>
+    </div>
+    <br>
     <div class="content">
       <%= comment.content %>
     </div>
-    <% if comment.users.include? current_user %>
-          <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %>
+    <br>
+    <% if comment.users.include?(current_user)  || current_user.admin? %>
+          <%= link_to 'Delete', comment, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %>
     <% end %>
     <hr>
   <% end %>
