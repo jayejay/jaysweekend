@@ -1,24 +1,8 @@
-# README
+Just a little example blog app.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#Create an user:
+You can create an user by seeding the database.
+Type in your console "rails db:migrate" to to create 
+the database and "rails db:seed" to create an admin user.
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
